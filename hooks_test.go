@@ -39,9 +39,9 @@ type mockDumper struct {
 }
 
 func (m *mockDumper) fxn(result error) dumpFxn {
-	return func(profile prof, dir string) error {
+	return func(profile profName, dir string) error {
 		m.profileDir = dir
-		m.profile = profile
+		m.profile.Prof = profile
 		return result
 	}
 }
@@ -128,7 +128,7 @@ func TestStartHeapJustDumps(t *testing.T) {
 	if dir == "" || err != nil {
 		t.Fatalf("Profiling should start without errors. I got '%s' and %v", dir, err)
 	}
-	if dumper.profile != profileHeap || dumper.profileDir != dir {
+	if dumper.profile.Prof != profileHeap || dumper.profileDir != dir {
 		t.Fatalf("Expecting heap to be dumped to %v, got %#v instead", dir, dumper)
 	}
 	if profilingInProgress() {
@@ -177,7 +177,7 @@ func TestStopCallsStop(t *testing.T) {
 	if !stopTrace.called || !stopCPU.called {
 		t.Fatalf("Profiles was not stopped")
 	}
-	if writeHeap.profile != profileHeap {
+	if writeHeap.profile.Prof != profileHeap {
 		t.Fatalf("Heap profile wasn't written on stop. Got %v instead", writeHeap.profile)
 	}
 	if profilingInProgress() {

@@ -1,0 +1,4 @@
+github.com/kardianos/osext v0.0.0-20170309185600-9d302b58e975 h1:xvknIKxUQpEypzxKGX59kCIEHYKRcqBa/6jQqXiWKF0=
+github.com/kardianos/osext v0.0.0-20170309185600-9d302b58e975/go.mod h1:1NbS8ALrpOvjt0rHPNLyCIeMtbizbir8U//inJ+zuB8=
+github.com/lazada/goprof v0.0.0-20170418074850-71c946b457c7 h1:WQg+MVJkz/BNJuR2ysOKAoUP3tDvX1HWokIn+53EWik=
+github.com/lazada/goprof v0.0.0-20170418074850-71c946b457c7/go.mod h1:PJf5ABOwgGXNQTe2xCxok+RNqxJwI0JpSXIGmVe8Mw0=
